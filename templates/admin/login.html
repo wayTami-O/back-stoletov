@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+{% block title %}Вход в админку | {{ site_title|default:_('Django site admin') }}{% endblock %}
+{% block content %}
+<div id="content" class="colM">
+  <h1>Вход в админ-панель</h1>
+  <div id="content-main">
+    <form action="{{ app_path }}" method="post" id="login-form">
+      {% csrf_token %}
+      <div class="form-row">{{ form.username.label_tag }} {{ form.username }}</div>
+      <div class="form-row">{{ form.password.label_tag }} {{ form.password }}</div>
+      <div class="submit-row">
+        <input type="submit" value="Войти" />
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
