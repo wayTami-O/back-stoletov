@@ -4,6 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+psycopg = {extras = ["binary"], version = "*"}
+python-dotenv = "*"
 
 [dev-packages]
 
