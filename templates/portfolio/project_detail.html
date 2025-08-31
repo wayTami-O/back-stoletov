@@ -31,6 +31,11 @@
           <img src="{{ project.image.url }}" class="img-fluid mb-3" alt="{{ project.name }}" />
         {% endif %}
         <p>{{ project.description|linebreaks }}</p>
+        {% if project.description_en %}
+          <hr />
+          <h5>English</h5>
+          <p>{{ project.description_en|linebreaks }}</p>
+        {% endif %}
       </div>
       <div class="col-md-4">
         <div class="card">

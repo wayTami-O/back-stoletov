@@ -14,6 +14,7 @@ class Project(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название проекта')
     subtitle = models.CharField(max_length=255, verbose_name='Заголовок', help_text='Краткое описание')
     description = models.TextField(verbose_name='Полное описание')
+    description_en = models.TextField(blank=True, null=True, verbose_name='Описание (EN)')
 
     link_google_play = models.URLField(blank=True, null=True, verbose_name='Google Play')
     link_rustore = models.URLField(blank=True, null=True, verbose_name='RuStore')

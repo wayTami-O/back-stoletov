@@ -10,14 +10,14 @@ class ProjectAdmin(admin.ModelAdmin):
         'name', 'category', 'release_date', 'work_start_date', 'work_end_date', 'updated_at'
     )
     list_filter = ('category', 'release_date', 'work_start_date', 'work_end_date', 'created_at')
-    search_fields = ('name', 'subtitle', 'description')
+    search_fields = ('name', 'subtitle', 'description', 'description_en')
     readonly_fields = ('created_at', 'updated_at')
     fieldsets = (
         (
             'Основное',
             {
                 'fields': (
-                    'name', 'subtitle', 'description', 'category', 'image'
+                    'name', 'subtitle', 'description', 'description_en', 'category', 'image'
                 )
             },
         ),

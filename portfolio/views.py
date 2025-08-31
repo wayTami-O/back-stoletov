@@ -61,6 +61,7 @@ def _serialize_project(project: Project, request) -> dict:
         "name": project.name,
         "subtitle": project.subtitle,
         "description": project.description,
+        "description_en": project.description_en,
         "category": project.category,
         "category_label": project.get_category_display(),
         "release_date": project.release_date.isoformat() if project.release_date else None,
