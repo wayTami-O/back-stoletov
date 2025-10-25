@@ -3,15 +3,15 @@
 Короткое руководство для локального запуска и базовой подготовки к продакшену.
 
 ### Требования
-- Python 3.13 (см. `Pipfile`)
+- Python 3.10 (см. `Pipfile`)
 - PostgreSQL 14+
 - Опционально: pipenv (или используйте venv)
 
 macOS (Homebrew):
 ```bash
-brew install python@3.13 postgresql@14
+brew install python@3.10 postgresql@14
 brew services start postgresql@14
-python3.13 -V && psql --version
+python3.10 -V && psql --version
 ```
 
 ### Переход в директорию проекта
@@ -60,10 +60,10 @@ pipenv install
 
 Вариант B — venv:
 ```bash
-python3.13 -m venv .venv
+python3.10 -m venv .venv
 source .venv/bin/activate
 pip install -U pip
-pip install "psycopg[binary]" python-dotenv django
+pip install -r requirements.txt
 ```
 
 ### Миграции и суперпользователь
@@ -125,7 +125,7 @@ python manage.py runserver 0.0.0.0:8000
 sudo apt update && sudo apt upgrade -y
 
 # Установка необходимых пакетов
-sudo apt install -y python3.13 python3.13-venv python3-pip nginx postgresql postgresql-contrib git
+sudo apt install -y python3.10 python3.10-venv python3-pip nginx postgresql postgresql-contrib git
 
 # Создание пользователя для приложения
 sudo adduser --system --group --shell /bin/bash django
@@ -157,12 +157,12 @@ git clone https://github.com/yourusername/back-stoletov.git
 cd back-stoletov
 
 # Создание виртуального окружения
-python3.13 -m venv .venv
+python3.10 -m venv .venv
 source .venv/bin/activate
 
 # Установка зависимостей
 pip install -U pip
-pip install "psycopg[binary]" python-dotenv django gunicorn
+pip install -r requirements.txt
 
 # Создание .env файла
 cat > .env << EOF
@@ -311,7 +311,7 @@ git pull origin main
 
 # Активация окружения и обновление зависимостей
 source .venv/bin/activate
-pip install -r requirements.txt  # если есть requirements.txt
+pip install -r requirements.txt
 
 # Применение миграций и сбор статики
 python manage.py migrate
